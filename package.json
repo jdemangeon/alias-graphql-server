@@ -1,0 +1,40 @@
+{
+    "name": "multi-graphql-server",
+    "version": "0.0.1",
+    "description": "Multi Versioned graphQL Server",
+    "scripts": {
+        "precommit": "lint-staged",
+        "babel-node": "babel-node --presets=env",
+        "start": "nodemon --exec npx babel-node -- src/server.js"
+    },
+    "lint-staged": {
+        "*.{js,json,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "env"
+        ],
+        "plugins": [
+            "transform-object-rest-spread"
+        ]
+    },
+    "dependencies": {
+        "express": "4.16.3",
+        "express-graphql": "0.6.12",
+        "graphql": "0.13.2",
+        "graphql-tag": "2.9.2",
+        "graphql-tools": "3.1.1"
+    },
+    "devDependencies": {
+        "babel-cli": "6.26.0",
+        "babel-preset-env": "1.7.0",
+        "babel-plugin-transform-object-rest-spread": "6.26.0",
+        "lint-staged": "7.2.2",
+        "nodemon": "1.18.4",
+        "npx": "10.2.0",
+        "prettier": "1.14.2"
+    }
+}
